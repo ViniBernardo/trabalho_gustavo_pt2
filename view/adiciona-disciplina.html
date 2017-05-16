@@ -1,0 +1,28 @@
+
+
+<div class="container-fluid" >
+    <div class="page-header">
+        <h2>Cadastro de Disciplina</h2>
+    </div>
+
+
+    <form>
+        <label>Curso</label>
+        <select>
+            <option ng-repeat="curso in curs" ng-model="disciplina.curso">{{curso.nome}}</option>
+        </select>
+        <br>
+        <label>Nome</label>
+        <input ng-model="disciplina.nome">
+        <br>
+        <label>Descrição</label>
+        <input ng-model="disciplina.descricao">
+        <br>
+        <button class="btn btn-sm btn-primary" ng-click="salvarDisciplina(disciplina)">
+            <span class="glyphicon glyphicon-plus"></span>
+            Salvar
+        </button>
+    </form>
+</div>
+
+

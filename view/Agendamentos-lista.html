@@ -1,0 +1,66 @@
+<br>
+<div class="container-fluid">
+    <div class="page-header">
+        <h2>Agendamentos</h2>
+    </div>
+
+
+    <button class="btn btn-sm btn-primary" ng-click="irPara('/adicionaAgendamentos')">
+        <span class="glyphicon glyphicon-plus"></span>
+        Adicionar
+    </button>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+
+            <th>
+                <label>Data</label>
+            </th>
+
+            <th>
+                <label>Horário</label>
+            </th>
+
+            <th>
+                <label>Ventilador</label>
+            </th>
+
+            <th>
+                <label>Luz sala</label>
+            </th>
+
+            <th>
+                <label>TV</label>
+            </th>
+
+            <th>
+                <label>Luz Quarto</label>
+            </th>
+            <th>
+                <label>Editar</label>
+            </th>
+            <th>
+                <label>Remover</label>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tbody ng-repeat="aluno in aul">
+        <tr>
+            <td>{{aluno.cpf}}</td>
+            <td>{{aluno.nome}}</td>
+            <td>{{aluno.email}}</td>
+            <td>{{aluno.email}}</td>
+            <td>{{aluno.email}}</td>
+            <td>{{aluno.email}}</td>
+            <td><button class="md" </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
