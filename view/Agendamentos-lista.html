@@ -42,22 +42,31 @@
                 <label>Editar</label>
             </th>
             <th>
-                <label>Remover</label>
+                <label>Excluir</label>
+
             </th>
 
         </tr>
         </thead>
 
-        <tbody ng-repeat="aluno in aul">
+        <tbody ng-repeat="tabela_anduino in arduino">
         <tr>
-            <td>{{aluno.cpf}}</td>
-            <td>{{aluno.nome}}</td>
-            <td>{{aluno.email}}</td>
-            <td>{{aluno.email}}</td>
-            <td>{{aluno.email}}</td>
-            <td>{{aluno.email}}</td>
-            <td><button class="md" </td>
+            <td>{{tabela_anduino.data | date:'dd-MM-yyyy'}}</td>
+            <td>{{tabela_anduino.data | date:'HH:mm'}}</td>
+            <td>{{tabela_anduino.ventilador}}</td>
+            <td>{{tabela_anduino.luzsala}}</td>
+            <td>{{tabela_anduino.tv}}</td>
+            <td>{{tabela_anduino.luzquato}}</td>
 
+            <td>
+                <a href="#" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-pencil"></span> Editar
+                </a>
+            </td>
+            <td>  <a href="#" class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-remove"></span> Excluir
+            </a>
+            </td>
         </tr>
         </tbody>
     </table>

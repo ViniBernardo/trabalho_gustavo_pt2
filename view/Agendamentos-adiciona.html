@@ -7,7 +7,9 @@
     <div class="row">
         <div class="col-lg-3"></div>
             <div class="col-lg-3">
-        <form>
+                {{forciente.$invalid}}
+                <div class="alert alert-warning"ng-show="formCliente.$invalid && !formCliente.$dirty">campo invalo</div>
+        <form name="formcliente">
 
             <br>
             <div class="form-group">
@@ -59,45 +61,45 @@
 
             <label>Ventilador:</label>
 
-                <input type="radio" ng-model="v.l" value="ventilador.ligado">
+                <input type="radio" ng-model="tabela_anduino.ventilador" value="L">
                 Ligado
 
-                <input type="radio" ng-model="v.l" value="ventilador.desligado">
+                <input type="radio" ng-model="tabela_anduino.ventilador" value="D">
                 Desligado
 
             <br>
 
             <label>Luz sala:</label>
 
-            <input type="radio" ng-model="s.l" value="sala.ligado">
+            <input type="radio" ng-model="tabela_anduino.luzsala" value="L">
             Ligado
 
-            <input type="radio" ng-model="s.l" value="sala.desligado">
+            <input type="radio" ng-model="tabela_anduino.luzsala" value="D">
                 Desligado
 
             <br>
 
             <label>TV:</label>
 
-            <input type="radio" ng-model="t.l" value="tv.ligado">
+            <input type="radio" ng-model="tabela_anduino.tv" value="L">
             Ligado
 
-            <input type="radio" ng-model="t.l" value="tv.desligado">
+            <input type="radio" ng-model="tabela_anduino.tv" value="D">
                 Desligado
 
             <br>
             <label>Luz Quarto:</label>
 
-            <input type="radio" ng-model="q.l" value="quarto.ligado">
+            <input type="radio" ng-model="tabela_anduino.luzquato" value="L">
             Ligado
 
-            <input type="radio" ng-model="q.l" value="quarto.desligado">
+            <input type="radio" ng-model="tabela_anduino.luzquato" value="D">
                 Desligado
 
             <br>
 
 
-            <button class="btn btn-sm btn-primary" ng-click="salvarAluno(aluno)">
+            <button class="btn btn-sm btn-primary" ng-click="salvar(tabela_anduino)">
                 <span class="glyphicon glyphicon-plus"></span>
                 Agendar
             </button>
