@@ -1,3 +1,4 @@
+
 <br>
 <div class="container-fluid" >
     <div class="page-header">
@@ -6,16 +7,23 @@
 
     <div class="row">
         <div class="col-lg-3"></div>
-            <div class="col-lg-3">
-                {{forciente.$invalid}}
-                <div class="alert alert-warning"ng-show="formCliente.$invalid && !formCliente.$dirty">campo invalo</div>
-        <form name="formcliente">
+        <div class="col-lg-3">
 
-            <br>
-            <div class="form-group">
-                <label class="labelx">Data:</label>
 
-                <div class="input-group">
+
+            <div class="container-fluid" >
+                <div class="page-header">
+                    <h2>Cadastro </h2>
+                </div>
+
+
+
+
+                <br>
+                <div class="form-group">
+                    <label class="labelx">Data:</label>
+
+                    <div class="input-group">
                 <span class="input-group-btn">
                 <div class="btn-group dropup">
 
@@ -37,75 +45,84 @@
                              max-view="month"
                              min-view="minutes"
                              class="ng-isolate-scope"
-                             ng-model="data"></div>
+                             ng-model="curso.nome"></div>
                     </ul>
 
                 </div>
 
             </span>
 
-                    <input date-time
-                           format="DD-MM-YY HH:mm"
-                           ng-model="data"
-                           ng-disabled="true"
-                           ng-readonly="true"
-                           class="form-control"
-                           ng-required="true"
-                           name="data">
+                        <input date-time
+                               format="DD-MM-YY HH:mm"
+                               ng-model="data"
+                               ng-disabled="true"
+                               ng-readonly="true"
+                               class="form-control"
+                               ng-required="true"
+                               name="data">
+
+                    </div>
+
 
                 </div>
+                <br>
 
 
-        </div>
-            <br>
-
-            <label>Ventilador:</label>
-
-                <input type="radio" ng-model="tabela_anduino.ventilador" value="L">
-                Ligado
-
-                <input type="radio" ng-model="tabela_anduino.ventilador" value="D">
-                Desligado
-
-            <br>
-
-            <label>Luz sala:</label>
-
-            <input type="radio" ng-model="tabela_anduino.luzsala" value="L">
-            Ligado
-
-            <input type="radio" ng-model="tabela_anduino.luzsala" value="D">
-                Desligado
-
-            <br>
-
-            <label>TV:</label>
-
-            <input type="radio" ng-model="tabela_anduino.tv" value="L">
-            Ligado
-
-            <input type="radio" ng-model="tabela_anduino.tv" value="D">
-                Desligado
-
-            <br>
-            <label>Luz Quarto:</label>
-
-            <input type="radio" ng-model="tabela_anduino.luzquato" value="L">
-            Ligado
-
-            <input type="radio" ng-model="tabela_anduino.luzquato" value="D">
-                Desligado
-
-            <br>
 
 
-            <button class="btn btn-sm btn-primary" ng-click="salvar(tabela_anduino)">
-                <span class="glyphicon glyphicon-plus"></span>
-                Agendar
-            </button>
-        </form>
-    </div>
+
+
+
+
+                    <br>
+                    <label>Ventilador:</label>
+
+                    <input type="radio" ng-model="curso.ventilador" value="L">
+                    Ligado
+
+                    <input type="radio" ng-model="curso.ventilador" value="D">
+                    Desligado
+
+                    <br>
+
+                    <label>Luz sala:</label>
+
+                    <input type="radio" ng-model="curso.luzsala" value="L">
+                    Ligado
+
+                    <input type="radio" ng-model="curso.luzsala" value="D">
+                    Desligado
+
+                    <br>
+                    <label>TV:</label>
+
+                    <input type="radio" ng-model="curso.tv" value="L">
+                    Ligado
+
+                    <input type="radio" ng-model="curso.tv" value="D">
+                    Desligado
+
+                    <br>
+                    <label>Luz quato:</label>
+
+                    <input type="radio" ng-model="curso.luzquato" value="L">
+                    Ligado
+
+                    <input type="radio" ng-model="curso.luzquato" value="D">
+                    Desligado
+
+                    <br>
+                    <br>
+                    <button class="btn btn-sm btn-primary" ng-click="salvar(curso)">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Salvar
+                    </button>
+                </form>
+            </div>
 
         <div class="col-lg-3"></div>
+    </div>
 </div>
-</div>
+
+
+

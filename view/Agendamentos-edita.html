@@ -52,18 +52,18 @@
         <tbody ng-repeat="tabela_anduino in arduino">
         <tr>
 
-            <td>{{tabela_anduino.nome| date:"dd/MM/yyyy"}}</td>
-            <td>{{tabela_anduino.nome|date:"HH:mm"}}</td>
+            <td>{{tabela_anduino.nome| date:"dd-MM-yyyy"}}</td>
+            <td>{{tabela_anduino.nome|date:"HH-mm"}}</td>
             <td>{{tabela_anduino.ventilador}}</td>
             <td>{{tabela_anduino.luzsala}}</td>
             <td>{{tabela_anduino.tv}}</td>
             <td>{{tabela_anduino.luzquato}}</td>
             <td>
-                <a href="#" ng-click="edita(tabela_anduino.id)" class="btn btn-primary btn-sm">
+                <a href="#" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-pencil"></span> Editar
                 </a>
             </td>
-            <td>  <a href="#" ng-click="delete(tabela_anduino.id)" class="btn btn-danger btn-sm">
+            <td>  <a href="#" class="btn btn-danger btn-sm">
                 <span class="glyphicon glyphicon-remove"></span> Excluir
             </a>
             </td>
