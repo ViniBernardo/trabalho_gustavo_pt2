@@ -5,7 +5,7 @@ angular.module("singlepageapp")
 
         $routeProvider.when("/", {
             templateUrl: "view/home.html",
-            controller: "homeController"
+
         });
 
         $routeProvider.when("/agendamentos", {

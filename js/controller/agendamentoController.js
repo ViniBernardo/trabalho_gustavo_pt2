@@ -3,6 +3,8 @@ angular.module("singlepageapp").controller("agendamentoController", function ($s
 
 
     $scope.arduino = [];
+    $scope.agendamento = [];
+
 
     $scope.irPara = function(caminho){
         $location.url(caminho);
@@ -11,22 +13,27 @@ angular.module("singlepageapp").controller("agendamentoController", function ($s
 
 
 
-    $scope.salvar = function(curso){
+    $scope.salvar = function(casa){
 
-        APIService.salvar(curso).then(function(curso){
-            alert("cadastrada com sucesso");
-            $location.url("/agendamentos");
-        },function(err){
-            alert("Deu tilt");
+        var str = moment(casa.data).add(24, 'hours').format('LLL');
+        var dados = str.split(" ");
+
+        $scope.casa.hora = dados[3] + ":00 " + dados[4];
+
+        APIService.salvar($scope.casa).then(function (dados) {
+            $location.url('/agendamentos');
+        }, function (err) {
+            toastr.error('Erro ao agendar', {timeOut : 500});
         });
-    }
+    };
 
-    $scope.delete = function(id){
+    $scope.apagar = function(agendamento){
+             APIService.delete(agendamento).then(function (dados) {
+                 listar();
+            }, function (err) {
+                alert('Erro ao excluir!!!', {timeOut : 500});
+            });
 
-        APIService.delete(id).then(function(id){
-        },function(){
-            $location.url("/agendamentos");
-        });
     }
 
 
@@ -43,34 +50,24 @@ angular.module("singlepageapp").controller("agendamentoController", function ($s
         APIService.listar().then(sucesso,erro);
     };
 
-    var listar = function(){
-
-        var sucesso = function(dados){
-            $scope.arduino = dados.data;
-        };
-
-        var erro = function(err){
-            alert("Erro"+err);
-        };
-
-        APIService.listar().then(sucesso,erro);
-    };
 
 
+    $scope.editarAgendamento = function (agendamento) {
 
-    $scope.edita = function (curso) {
-        //alert(curso);
-        var sucesso = function (dados) {
-            $scope.aul = dados.data;
+        var sucesso = function () {
+            alert('Atualizado com sucesso!!!', {timeOut : 500});
+            $scope.paginar($scope.pag);
         };
 
         var erro = function (err) {
-            alert("Erro ao listar os alunos");
+            alert('Erro ao atualizar!!!', {timeOut : 500});
         };
 
-        APIService.listarAlunoPorCurso(curso).then(sucesso,erro);
+        APIService.editarAgendamento(agendamento, agendamento.id_cadastro).then(sucesso, erro);
 
-    }
+
+    };
+
 
 
     listar();
